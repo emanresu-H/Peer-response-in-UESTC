@@ -20,9 +20,9 @@ if __name__ == '__main__':
     file_init = pd.read_excel(read_name)
 
     # 初始化一个表的雏形
-    file_sxpd = file_init[['姓名', '思想品德素质得分']]
+    file_sxpd = file_init[['姓名', '学号', '思想品德素质得分']]
     file_sxpd = file_sxpd.rename(columns={'思想品德素质得分': Name[0]})
-    file_sxsm = file_init[['姓名', '身心+审美人文+劳动素质得分']]
+    file_sxsm = file_init[['姓名', '学号','身心+审美人文+劳动素质得分']]
     file_sxsm = file_sxsm.rename(columns={'身心+审美人文+劳动素质得分': Name[0]})
 
     # 读入剩余文件
