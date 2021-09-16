@@ -43,6 +43,10 @@ if __name__ == '__main__':
     file_sxpd = file_sxpd.sort_values(by="average", ascending=False)
     file_sxsm = file_sxsm.sort_values(by="average", ascending=False)
 
+    #以姓名为索引
+    file_sxpd = file_sxpd.set_index('姓名')
+    file_sxsm = file_sxsm.set_index('姓名')
+
     print('思想品德素质得分：\n',file_sxpd)
     print('\n身心+审美人文+劳动素质得分：\n',file_sxsm)
 
