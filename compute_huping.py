@@ -34,8 +34,10 @@ if __name__ == '__main__':
         file_sxsm[Name[i]] = file_read['身心+审美人文+劳动素质得分']
 
     # 求裁剪平均值
-    file_sxpd['average'] = (file_sxpd.sum(axis=1) - file_sxpd.min(axis=1) - file_sxpd.max(axis=1)) / (file_num - 2)
-    file_sxsm['average'] = (file_sxsm.sum(axis=1) - file_sxsm.min(axis=1) - file_sxsm.max(axis=1)) / (file_num - 2)
+    file_sxpd['average'] = (file_sxpd.iloc[:,2:].sum(axis=1)-file_sxpd.iloc[:,2:].min(axis=1)-file_sxpd.iloc[:,2:].max(axis=1))\
+                           /(file_num - 2)
+    file_sxsm['average'] = (file_sxsm.iloc[:,2:].sum(axis=1)-file_sxsm.iloc[:,2:].min(axis=1)-file_sxsm.iloc[:,2:].max(axis=1))\
+                           /(file_num - 2)
 
     #排序
     file_sxpd = file_sxpd.sort_values(by="average", ascending=False)
